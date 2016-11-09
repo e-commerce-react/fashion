@@ -1,8 +1,9 @@
 'use strict';
 
-import express from 'express';
+const express = require('express')
 const router = express.Router();
-import {Review, User} from '../db/models/index';
+const Review = require('APP/db/models/review')
+const User = require('APP/db/models/user')
 
 router.get('/', function(req, res, next){
     Review.findAll({
@@ -12,7 +13,7 @@ router.get('/', function(req, res, next){
         .catch(next);
 });
 
-router.get('/reviewId', function(req, res, next){
+router.get('/:reviewId', function(req, res, next){
     Review.findById(req.params.reviewId)
         .then(foundReview => res.send(foundReview))
         .catch(next);
@@ -29,11 +30,11 @@ router.post('/create/:productId', function(req, res, next){
         .catch(next);
 });
 
-router.put('/reviewId', function(req, res, next){
+router.put('/:reviewId', function(req, res, next){
     Review.findById(req.params.reviewId)
         .then(foundReview => foundReview.update(req.body))
         .then(updatedReview => res.send(updatedReview))
         .catch(next);
 });
 
-module.export = router;
+module.exports = router;

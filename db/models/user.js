@@ -5,7 +5,7 @@ const Sequelize = require('sequelize')
 const db = require('APP/db')
 
 const User = db.define('users', {
-  name: Sequelize.STRING,  
+  name: Sequelize.STRING,
   email: {
     type: Sequelize.STRING,
     validate: {
@@ -13,6 +13,14 @@ const User = db.define('users', {
 			notEmpty: true,
 		}
   },
+
+  authorization: Sequelize.ENUM('sudo', 'manager', 'sales', 'purchase', 'designer', 'user'),
+  likes: Sequelize.ARRAY(Sequelize.INTEGER),
+  dislikes: Sequelize.ARRAY(Sequelize.INTEGER),
+  followers: Sequelize.ARRAY(Sequelize.INTEGER),
+  followings: Sequelize.ARRAY(Sequelize.INTEGER),
+  purchase_history: Sequelize.ARRAY(Sequelize.INTEGER),
+
 
   // We support oauth, so users may or may not have passwords.
   password_digest: Sequelize.STRING,
@@ -30,7 +38,7 @@ const User = db.define('users', {
           (err, result) =>
             err ? reject(err) : resolve(result))
         )
-    }    
+    }
   }
 })
 

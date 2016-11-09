@@ -1,7 +1,7 @@
 'use strict'
 
-import Sequelize from 'sequelize';
-import db from 'APP/db';
+const Sequelize = require('sequelize')
+const db = require('APP/db')
 
 module.exports = db.define('product', {
     name: {
@@ -44,9 +44,10 @@ module.exports = db.define('product', {
     stocks: {
         type: Sequelize.INTEGER,
         allowNull: false
-    },{
+    }
+},{
     instanceMethods: {},
     classMethods: {},
     hooks: {}
-}
 })
+

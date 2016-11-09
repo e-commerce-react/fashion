@@ -2,12 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-import {Product, Review} from '../db/models/index';
+const Product = require('APP/db/models/product')
+const Review = require('APP/db/models/review')
 
 //retrieve all products
 router.get('/', function(req, res, next){
     Product.findAll()
-        .then(allProducts => res.send(allProduct))
+        .then(allProducts => res.send(allProducts))
         .catch(next);
 })
 
@@ -23,7 +24,8 @@ router.get('/:productId', function(req, res, next){
         .catch(next);
 })
 
-//create new product
+// create new product
+// purchase by purchase mgr => authorization check
 router.post('/create', function(req, res, next){
     Product.create(req.body)
         .then(createdProduct => res.send(createdProduct))
