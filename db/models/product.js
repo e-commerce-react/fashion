@@ -13,7 +13,7 @@ module.exports = db.define('product', {
     },
     category: {
         type: Sequelize.ENUM,
-        values: ['Clothes', 'Shoes', 'Jewelry'],
+        values: ['Clothes', 'Shoes', 'Jewelry', 'Bag'],
         allowNull: false,
     },
     subCategory: {
@@ -32,7 +32,7 @@ module.exports = db.define('product', {
         type: Sequelize.STRING
     },
     imageUrl: {
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
     },
     dateAdded: {
         type: Sequelize.DATE

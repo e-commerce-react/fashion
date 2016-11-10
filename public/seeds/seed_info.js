@@ -4,6 +4,7 @@ let male_shoe_1 = {
   category: 'Shoes',
   subCategory: 'Casual',
   gender: 'Male',
+  size: 'M',
   // "size": [5, 6, 6.5, 7, 8.5, 9, 10, 11],
   color: 'black',
   imageUrl: ['/seeds/male-shoe-1/male-shoe-1-1.jpg', '/seeds/male-shoe-1/male-shoe-1-2.jpg', '/seeds/male-shoe-1/male-shoe-1-3.jpg', '/seeds/male-shoe-1/male-shoe-1-4.jpg'],
@@ -18,6 +19,7 @@ let male_shoe_2 = {
   category: 'Shoes',
   subCategory: 'Casual',
   gender: 'Male',
+  size: 'L',
   // "size": [5, 6, 6.5, 7, 8.5, 9, 10, 11],
   color: 'baltic blue',
   imageUrl: ['/seeds/male-shoe-2/male-shoe-2-1.jpg', '/seeds/male-shoe-2/male-shoe-2-2.jpg', '/seeds/male-shoe-2/male-shoe-2-3.jpg', '/seeds/male-shoe-2/male-shoe-2-4.jpg'],
@@ -32,6 +34,7 @@ let male_shoe_3 = {
   category: 'Shoes',
   subCategory: 'Dress',
   gender: 'Male',
+  size: 'L',
   // "size": [5, 6, 6.5, 7, 8.5, 9, 10, 11],
   color: 'white+tobacco',
   imageUrl: ['/seeds/male-shoe-3/male-shoe-3-1.jpg', '/seeds/male-shoe-3/male-shoe-3-2.jpg', '/seeds/male-shoe-3/male-shoe-3-3.jpg', '/seeds/male-shoe-3/male-shoe-3-4.jpg'],
@@ -54,7 +57,7 @@ One inside laptop/document pocket, one pocket with zipper closure
 Prada logo lining
 Padded back in technical fabric
 Name tag`,
-  category: 'Accessory',
+  category: 'Bag',
   subCategory: 'Casual', //bag, wallet, other
   gender: 'Male',
   // "size": [5, 6, 6.5, 7, 8.5, 9, 10, 11], // => l. 11.4    h. 15.7    w. 6.6    inches
@@ -64,6 +67,7 @@ Name tag`,
   price: 5169.99,
   stocks: 9
 };
+
 
 let male_accessory_2 = {
   name: 'trick',
@@ -99,6 +103,7 @@ Leather strap`,
   stocks: 45
 }
 
+
 let male_accessory_4 = {
   name: 'linea rossa eyewear',
   description: `Prada Linea Rossa Spectrum collection. Classic ultra-light pale gold metal aviator frame. Rubber inserts on temple tips. Linea Rossa logo.`,
@@ -112,7 +117,6 @@ let male_accessory_4 = {
   price: 480,
   stocks: 45
 }
-
 
 
 

@@ -4,11 +4,49 @@
 
 /* background-video setup*/
 #background-video {
-  object-fit: cover!important;
+  object-fit: cover;
   height: 100%;
   width: 100%;
   float: left;
   top: 0;
   padding: none;
   position: fixed;
+}
+
+
+.app-bar-home {
+  background: transparent!important;
+  box-shadow: none!important;
+}
+
+.app-bar-menu {
+  color: #fff!important;
+}
+
+.mainpage-landing {
+  color: #fff!important;
+  z-index: 10;
+  position: absolute;
+  top: 38%;
+}
+
+.mainpage-landing h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1.2em;
+}
+
+.mainpage-landing p {
+  font-weight: 400;
+  border-bottom: 1px dotted #fff;
+}
+
+
+.mainpage-landing-enter-btn {
+  font-size: 1.2em;
+  font-weight: 400;
+  border: 1px dotted #fff;
+  border-radius: 3px;
+  padding: 6px;
+
 }
