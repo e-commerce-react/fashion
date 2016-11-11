@@ -50,3 +50,42 @@
   padding: 6px;
 
 }
+
+.row {
+  padding: 16px;
+}
+
+.social-media > a {
+  margin-right: 1em;
+  font-size: 1.5em;
+}
+
+/*
+.product-detail-images, .product-detail-info {
+  padding: 2%;
+}*/
+
+.product-detail-description {
+  max-height: 120px!important;
+  overflow: auto;
+}
+
+.product-detail-mainImage > img {
+  padding: 0!important;
+  margin-bottom: 1%;
+}
+
+.product-detail-thumbs > img {
+  padding: 0!important;
+  height: 100px;
+}
+
+
+
+.product-detail-price {
+  position: relative!important;
+}
+
+span.letter {
+  color: #fff
+}

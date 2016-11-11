@@ -15,8 +15,9 @@ import Menu from 'material-ui/svg-icons/navigation/menu';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 
-injectTapEventPlugin();
+import customizedMuiTheme from './customizedMuiTheme';
 
+injectTapEventPlugin();
 
 
 import store from './store'
@@ -25,8 +26,9 @@ import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
 
 
-
 import Home from './components/Home'
+import ProductsList from './components/ProductsList'
+// import ProductDetail from './components/ProductDetail'
 
 const Open = (props) => {
   return(
@@ -45,35 +47,46 @@ const Open = (props) => {
 
 const App = (props) => {
   return (
-    <MuiThemeProvider>
+    <MuiThemeProvider muiTheme={customizedMuiTheme}>
       <div>
-        <div  className="row start-xs">
-          <AppBar
-            title="e-FASHION"
-            iconElementLeft={<span></span>}
-            iconElementRight={<Open />}
-            className="app-bar-home col-xs-6 col-xs-offset-3"
-          />
-
-          <video id="background-video" loop autoPlay>
-            <source className="bg-video" src="/bg-video.mp4" type="video/mp4" />
-            <source className="bg-video" src="/bg-video.mp4" type="video/ogg" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-
-        <div className="row center-xs">
-          <div className="col-xs-6 mainpage-landing">
-            <h3>Welcome!</h3>
-            <a className="mainpage-landing-enter-btn">ENTER HERE</a>
-            <p>already a member? login</p>
-          </div>
-        </div>
+        <ProductsList />
       </div>
 
     </MuiThemeProvider>
   )
 }
+
+// const App = (props) => {
+//   return (
+//     <MuiThemeProvider>
+//       <div>
+//         <div  className="row start-xs">
+//           <AppBar
+//             title="e-FASHION"
+//             iconElementLeft={<span></span>}
+//             iconElementRight={<Open />}
+//             className="app-bar-home col-xs-6 col-xs-offset-3"
+//           />
+
+//           <video id="background-video" loop autoPlay>
+//             <source className="bg-video" src="/bg-video.mp4" type="video/mp4" />
+//             <source className="bg-video" src="/bg-video.mp4" type="video/ogg" />
+//             Your browser does not support the video tag.
+//           </video>
+//         </div>
+
+//         <div className="row center-xs">
+//           <div className="col-xs-6 mainpage-landing">
+//             <h3>Welcome!</h3>
+//             <a className="mainpage-landing-enter-btn">ENTER HERE</a>
+//             <p>already a member? login</p>
+//           </div>
+//         </div>
+//       </div>
+
+//     </MuiThemeProvider>
+//   )
+// }
 
 
 render (
