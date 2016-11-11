@@ -1,21 +1,13 @@
-const RECEIVE_PRODUCTS_FROM_SERVER = 'RECEIVE_PRODUCTS_FROM_SERVER';
-import store from '../store';
+const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 
-export const receiveProductsFromServer = products => ({
-  type: RECEIVE_PRODUCTS_FROM_SERVER,
+export const receiveProducts = products => ({
+  type: RECEIVE_PRODUCTS,
   products
-})
-
-export const fetchProductsFromServer = () => {
-    fetch('/api/products')
-      .then(res => res.json())
-      .then(products => store.dispatch(receiveProductsFromServer(products)))
-      .catch(err => console.error(err.stack))
-}
+});
 
 export default function products (state=[], action) {
   switch (action.type) {
-    case RECEIVE_PRODUCTS_FROM_SERVER: return action.products;
+    case RECEIVE_PRODUCTS: return action.products;
     default: return state;
   }
 }

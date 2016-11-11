@@ -1,5 +1,5 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {cyan500, darkBlack} from 'material-ui/styles/colors';
+import { cyan500, darkBlack } from 'material-ui/styles/colors';
 
 const customizedMuiTheme = getMuiTheme({
   palette: {
@@ -10,6 +10,5 @@ const customizedMuiTheme = getMuiTheme({
     textColor: darkBlack
   }
 });
-
 
 export default customizedMuiTheme;
