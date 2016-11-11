@@ -28,6 +28,9 @@ import WhoAmI from './components/WhoAmI'
 
 import Home from './components/Home'
 
+//importing components
+import AllProductList from './components/AllProductList.jsx';
+
 const Open = (props) => {
   return(
     <IconMenu
@@ -55,6 +58,7 @@ const App = (props) => {
             className="app-bar-home col-xs-6 col-xs-offset-3"
           />
 
+
           <video id="background-video" loop autoPlay>
             <source className="bg-video" src="/bg-video.mp4" type="video/mp4" />
             <source className="bg-video" src="/bg-video.mp4" type="video/ogg" />
@@ -69,6 +73,18 @@ const App = (props) => {
             <p>already a member? login</p>
           </div>
         </div>
+
+        {
+        //KT: comment this out if you do not want to see the product list for now.
+        <div className="row center-xs">
+          <div className="col-xs">
+            <div className="box">
+             <AllProductList />
+            </div>
+          </div>
+        </div>
+        }
+
       </div>
 
     </MuiThemeProvider>
