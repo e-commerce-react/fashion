@@ -9,24 +9,25 @@ export default class ProductsTile extends Component {
   }
 
   handleMouseOver () {
+
     this.setState({displayPrice: !this.state.displayPrice})
   }
 
   render() {
-    let tile = this.props.singleTile;
+    // console.log(this.props.singleTile);
 
     return (
-        <GridTile
-          key={tile.img}
-          title={this.state.displayPrice ? tile.title : ''}
-          titlePosition='top'
-          subtitle={this.state.displayPrice ? tile.price : ''}
-          onMouseEnter={this.handleMouseOver}
-          onMouseLeave={this.handleMouseOver}
-          titleBackground='transparent'
-        >
-          <img src={tile.img} />
-        </GridTile>
-  )
+      <GridTile
+        key={this.props.singleTile.id}
+        title={this.state.displayPrice ? this.props.singleTile.name : ''}
+        titlePosition='top'
+        subtitle={this.state.displayPrice ? this.props.singleTile.price : ''}
+        onMouseEnter={this.handleMouseOver}
+        onMouseLeave={this.handleMouseOver}
+        titleBackground='transparent'
+      >
+        <img src={this.props.singleTile.imageUrl[0]} />
+      </GridTile>
+    )
   }
 }

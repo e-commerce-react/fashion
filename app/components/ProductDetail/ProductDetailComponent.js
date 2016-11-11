@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ProductDetailContainer from './ProductDetailContainer';
+
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -19,11 +21,17 @@ const raisedButtonStyle = {
   padding: 0
 };
 
-const ProductDetail = (props) => {
-  return (
-    <div>
-      <br />
 
+
+export default class ProductDetail extends Component {
+
+  render () {
+
+    const { product } = this.props;
+
+    return (
+      <div>
+        <br />
 
       <div className="row">
         <div className="col-xs-offset-2 col-xs-4 product-detail-images">
@@ -33,38 +41,32 @@ const ProductDetail = (props) => {
           <br />
 
           <div className="product-detail-mainImage">
-            <img className="col-xs-12" src="seeds/female-bag-2/female-bag-2-1.jpg" />
+            <img className="col-xs-12" src="/seeds/female-bag-3/female-bag-3-1.jpg" />
           </div>
 
           <div className="product-detail-thumbs">
-            <img className="col-xs-3" src="seeds/female-bag-2/female-bag-2-1.jpg" />
-            <img className="col-xs-3" src="seeds/female-bag-2/female-bag-2-2.jpg" />
-            <img className="col-xs-3" src="seeds/female-bag-2/female-bag-2-3.jpg" />
-            <img className="col-xs-3" src="seeds/female-bag-2/female-bag-2-4.jpg" />
+            <img className="col-xs-3" src="/seeds/female-bag-2/female-bag-2-1.jpg" />
+            <img className="col-xs-3" src="/seeds/female-bag-2/female-bag-2-2.jpg" />
+            <img className="col-xs-3" src="/seeds/female-bag-2/female-bag-2-3.jpg" />
+            <img className="col-xs-3" src="/seeds/female-bag-2/female-bag-2-4.jpg" />
           </div>
+
 
 
         </div>
         <div className="col-xs-4 product-detail-info">
-          <h3>prada bibliothèque bag</h3>
+          <h3>{product.name}</h3>
           <br />
-          <p>color > terracotta</p>
+
+          <p>color > {product.color}</p>
+
           <p>description ></p>
-          <div className="product-detail-description">
-            Prada Bibliothèque calf leather bag with bellow sides
-            Double leather handle
-            Detachable adjustable leather shoulder strap
-            Metal hardware
-            Metal lettering logo
-            Snap closure on sides
-            Three inside pockets, including one with zipper closure and one with flap
-            Nappa leather lining
-          </div>
+          <div className="product-detail-description">{product.description}</div>
+
+
 
           <br />
-          <div className="product-detail-price">
-            <h3>$3,080.00</h3>
-          </div>
+          <div className="product-detail-price"><h3>$ {product.price}</h3></div>
 
           <div>
           SELECT SIZE: 6.5 <Slider step={0.10} value={0.5} />
@@ -90,9 +92,8 @@ const ProductDetail = (props) => {
 
         <div className="col-xs-2"></div>
       </div>
-
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
-export default ProductDetail;

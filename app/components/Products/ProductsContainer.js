@@ -1,11 +1,13 @@
+import { connect } from 'react-redux';
+import ProductsList from './ProductsGridList';
+import { receiveProductsFromServer, fetchProductsFromServer } from '../../redux/products';
 
-import { connect } from'react-redux';
-import ProductsList from'./ProductsGridList';
+const mapStateToProps = state => ({products: state.products});
 
-const mapStateToProps = ({ albums }) => ({
-  albums
-});
+const mapDispatchToProps = dispatch => ({
+  recieveProducts: products => dispatch(receiveProductsFromServer(products)),
+  fetchProducts: () => dispatch(fetchProductsFromServer())
+})
 
-export default connect(
-  mapStateToProps
-)(ProductsList);
+const ProductsContainer = connect( mapStateToProps, mapDispatchToProps ) (ProductsList);
+export default ProductsContainer;
