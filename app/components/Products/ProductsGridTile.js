@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-
-import {cyan500, darkBlack} from 'material-ui/styles/colors';
+import { GridTile } from 'material-ui/GridList';
 
 export default class ProductsTile extends Component {
   constructor(props) {
@@ -35,4 +30,3 @@ export default class ProductsTile extends Component {
   )
   }
 }
-

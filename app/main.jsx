@@ -1,60 +1,31 @@
-'use strict'
 import React from 'react'
-import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
-import {render} from 'react-dom'
-import {connect, Provider} from 'react-redux'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 
-
-//Material-UI set-up
-import injectTapEventPlugin from 'react-tap-event-plugin';
+//ui material setup
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import Menu from 'material-ui/svg-icons/navigation/menu';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-
 import customizedMuiTheme from './customizedMuiTheme';
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-
 import store from './store'
-import Jokes from './components/Jokes'
-import Login from './components/Login'
-import WhoAmI from './components/WhoAmI'
+import Routes from './routes';
 
 
-import Home from './components/Home'
-import ProductsList from './components/ProductsList'
-// import ProductDetail from './components/ProductDetail'
-
-const Open = (props) => {
-  return(
-    <IconMenu
-      iconButtonElement={<IconButton><Menu className="app-bar-menu"/></IconButton>}
-      targetOrigin={{horizontal: 'right', vertical: 'top'}}
-      anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-    >
-        <MenuItem primaryText="Sign In" />
-        <MenuItem primaryText="Shop" />
-        <MenuItem primaryText="About" />
-    </IconMenu>
-  )
-}
+render (
+  <MuiThemeProvider muiTheme={customizedMuiTheme}>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+  </MuiThemeProvider>,
+  document.getElementById('main')
+)
 
 
-const App = (props) => {
-  return (
-    <MuiThemeProvider muiTheme={customizedMuiTheme}>
-      <div>
-        <ProductsList />
-      </div>
 
-    </MuiThemeProvider>
-  )
-}
+
+
+
 
 // const App = (props) => {
 //   return (
@@ -87,47 +58,6 @@ const App = (props) => {
 //     </MuiThemeProvider>
 //   )
 // }
-
-
-render (
-  <App />,
-  document.getElementById('main')
-)
-
-
-
-
-// iconClassNameRight="muidocs-icon-navigation-expand-more"
-
-
-
-
-
-
-
-// const ExampleApp = connect(
-//   ({ auth }) => ({ user: auth })
-// ) (
-//   ({ user, children }) =>
-//     <div>
-//       <nav>
-//         {user ? <WhoAmI/> : <Login/>}
-//       </nav>
-//       {children}
-//     </div>
-// )
-
-// render (
-//   <Provider store={store}>
-//     <Router history={browserHistory}>
-//       <Route path="/" component={ExampleApp}>
-//        <IndexRedirect to="/jokes" />
-//        <Route path="/jokes" component={Jokes} />
-//       </Route>
-//     </Router>
-//   </Provider>,
-//   document.getElementById('main')
-// )
 
 
 

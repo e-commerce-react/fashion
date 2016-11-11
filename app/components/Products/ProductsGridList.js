@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
+import { Link } from 'react-router';
+
+import { GridList } from 'material-ui/GridList';
+import ProductsTile from './ProductsGridTile';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-
-import ProductsTile from './ProductsTile';
-
 
 
 const styles = {
@@ -21,7 +19,7 @@ const styles = {
 
 };
 
-const tilesData = [
+const products = [
   {
     img: 'seeds/female-accessory-1/female-accessory-1-1.jpg',
     title: 'eyewear',
@@ -115,23 +113,27 @@ const tilesData = [
 ];
 
 
+
 export default class Products extends Component {
 
   render() {
     return (
-    <div style={styles.root}>
-    <GridList
-      cellHeight={300}
-      style={styles.gridList}
-      cols={4}
-    >
-      <Subheader>Products - All products  FILTER COMES HERE!</Subheader>
-      {tilesData.map((tile) => (
-        <ProductsTile key={tile.img} singleTile={tile}/>
+      <div style={styles.root}>
+        <GridList
+          cellHeight={300}
+          style={styles.gridList}
+          cols={4}
+        >
+        <Subheader>Products - All products  FILTER COMES HERE!</Subheader>
 
-      ))}
-    </GridList>
-  </div>
-  )
+        {products.map((product) => (
+          <Link to={`/products/${product.title}`}>
+            <ProductsTile key={product.img} singleTile={product}/>
+          </Link>
+        ))}
+
+        </GridList>
+      </div>
+    )
   }
 }
