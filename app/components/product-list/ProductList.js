@@ -8,9 +8,7 @@ export default ({ products }) => (
       {
         products.map(product => (
           <div key={ product.id }>
-            <Link to={`/products/${product.id}`}>
-              { product.name }
-            </Link>
+            <Link to={`/products/${product.id}`}>{ product.name }</Link>
           </div>
         ))
       }
