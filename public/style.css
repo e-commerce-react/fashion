@@ -11,13 +11,17 @@
   top: 0;
   padding: none;
   position: fixed;
+  z-index: -1;
 }
 
 
-.app-bar-home {
+.app-bar-landing {
   background: transparent!important;
   box-shadow: none!important;
 }
+
+
+
 
 .app-bar-menu {
   color: #fff!important;
@@ -90,3 +94,7 @@ span.letter {
   color: #fff
 }
 
+.svg-icons {
+  display: inline-block;
+  vertical-align: middle;
+}

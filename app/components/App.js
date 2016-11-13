@@ -1,9 +1,11 @@
 import React from 'react';
+import AppBar from './app-bar/AppBar';
+import Footer from './footer/Footer';
 
 export default ({ children, location }) => (
   <div>
-    <h1>AppBar will come here</h1>
+    <AppBar />
     { children }
-    <h1>footer comes here</h1>
+    <Footer className="app-footer"/>
   </div>
 )
