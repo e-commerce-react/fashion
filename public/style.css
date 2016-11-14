@@ -2,30 +2,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-/* background-video setup*/
-#background-video {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  float: left;
-  top: 0;
-  padding: none;
+
+.product-list-goto-top {
+  height: 30px!important;
+  width: 30px!important;
   position: fixed;
-  z-index: -1;
+  bottom: 2%;
+  right: 2%;
 }
 
-
-.app-bar-landing {
-  background: transparent!important;
-  box-shadow: none!important;
-}
-
-
-
-
-.app-bar-menu {
-  color: #fff!important;
-}
 
 .mainpage-landing {
   color: #fff!important;

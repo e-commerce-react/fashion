@@ -18,7 +18,7 @@ export default class ProductsTile extends Component {
         key={this.props.productListItem.id}
         title={this.state.displayPrice ? this.props.productListItem.name : ''}
         titlePosition='top'
-        subtitle={this.state.displayPrice ? this.props.productListItem.price : ''}
+        subtitle={this.state.displayPrice ? `$ ${this.props.productListItem.price}` : ''}
         onMouseEnter={this.handleMouseOver}
         onMouseLeave={this.handleMouseOver}
         titleBackground='transparent'
