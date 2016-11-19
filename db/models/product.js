@@ -5,20 +5,18 @@ const db = require('APP/db')
 
 module.exports = db.define('product', {
     name: {
-        type: Sequelize.TEXT,
-        allowNull: false
+        type: Sequelize.TEXT
     },
     description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
     },
     category: {
         type: Sequelize.ENUM,
-        values: ['Clothes', 'Shoes', 'Jewelry', 'Bag'],
-        allowNull: false,
+        values: ['Clothes', 'Shoes', 'Jewelry', 'Bag', 'Accessory']
     },
     subCategory: {
         type: Sequelize.ENUM,
-        values: ['Dress', 'Causal', 'Costume']
+        values: ['Dress', 'Casual', 'Costume']
     },
     gender: {
         type: Sequelize.ENUM,
@@ -38,12 +36,10 @@ module.exports = db.define('product', {
         type: Sequelize.DATE
     },
     price: {
-        type: Sequelize.FLOAT,
-        allowNull: false
+        type: Sequelize.FLOAT
     },
     stocks: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+        type: Sequelize.INTEGER
     }
 },{
     instanceMethods: {},

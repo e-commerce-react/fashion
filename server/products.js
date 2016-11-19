@@ -14,12 +14,13 @@ router.get('/', function(req, res, next){
 
 //retrieve specific product based on ID
 router.get('/:productId', function(req, res, next){
-    Product.findById({
-        where: {
-            id: req.params.productId,
-            include: {model: Review}
-        }
-    })
+    Product.findById(req.params.productId)
+    // Product.findById({
+    //     where: {
+    //         id: req.params.productId,
+    //         include: {model: Review}
+    //     }
+    // })
         .then(foundProduct => res.send(foundProduct))
         .catch(next);
 })
