@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import FlatButton from 'material-ui/FlatButton';
+import Landing from './Landing';
 
 const styles = {
   root: {},
@@ -13,21 +12,13 @@ const styles = {
     zIndex: '-1',
     position: 'absolute'
   },
-  flatButton: {
-    position: 'absolute',
-    top: '50%',
-    left: '45%',
-    color: '#fff'
-  },
-  btnLabelSize: {
-    fontSize: '40px'
-  }
+
 }
 
 export default () => (
-  <div style={styles.root}>
+  <div style={styles.root} className="row center-xs">
 
-    <Link to="/products"><FlatButton label="Enter" labelStyle={styles.btnLabelSize} style={styles.flatButton}/></Link>
+    <Landing />
 
     <video style={styles.video} loop autoPlay>
       <source src="/bg-video.mp4" type="video/mp4" />

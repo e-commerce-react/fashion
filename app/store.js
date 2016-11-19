@@ -3,10 +3,15 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from './redux';
 
-export default createStore(
+import { whoami } from './redux/auth';
+
+const store = createStore(
   rootReducer,
   applyMiddleware(
     createLogger(),
     thunkMiddleware
   )
 );
+
+export default store;
+store.dispatch(whoami())
